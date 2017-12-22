@@ -1,0 +1,267 @@
+// Table Plan plugin
+
+.section-map {
+  min-height: 400px;
+  min-width: 550px;
+  margin-bottom: 0;
+  position: relative;
+  background-color: white !important;
+  background-image: linear-gradient(rgba(216, 221, 230, 1) 2px, transparent 2px),
+  linear-gradient(90deg, rgba(216, 221, 230, 1) 2px, transparent 2px),
+  linear-gradient(rgba(236, 242, 245, 1) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(236, 242, 245, 1) 1px, transparent 1px) !important;
+  background-size: 100px 100px, 115px 100px, 20px 20px, 23px 23px !important;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px !important;
+}
+
+.tableM-object {
+  position: absolute !important;
+  z-index: 1;
+  @include transition(all 0.3ms ease);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+    z-index: 10;
+  }
+
+  &-table {
+    background-color: $light-bg-color !important;
+
+    border: 2px solid $dark-bg-color !important;
+
+    &.active {
+      background-color: white !important;
+    }
+  }
+
+  &-plant {
+    background: url("../../images/plan-plant.svg") no-repeat;
+    -webkit-background-size: contain !important;
+    background-size: contain !important;
+    transition: none;
+
+    &.active {
+      background: url("../../images/plan-plant-active.svg") no-repeat;
+    }
+  }
+
+  &-wall {
+    background-color: white !important;
+    background-size: 24px 24px !important;
+    background-image: -webkit-linear-gradient(115deg, #354052 9px, transparent 0), -webkit-linear-gradient(295deg, #354052 9px, transparent 0px), -webkit-linear-gradient(115deg, #354052 9px, transparent 0), -webkit-linear-gradient(295deg, #354052 9px, transparent 0);
+    background-position: 0 -10px, 4px 28px, 12px 2px, 15px -8px !important;
+    //background-color: white !important;
+    //background-size: 58px 58px !important;
+    //background-position: 0 2px, 4px 35px, 29px 31px, 34px 6px !important;
+    //background-image: -webkit-linear-gradient(115deg, $dark-bg-color 23px, transparent 23px), -webkit-linear-gradient(295deg, $dark-bg-color 23px, transparent 23px), -webkit-linear-gradient(115deg, $dark-bg-color 23px, transparent 23px), -webkit-linear-gradient(295deg, $dark-bg-color 23px, transparent 23px);
+
+    &.active {
+      background-color: $dark-bg-color !important;
+      //background-position: 0 -10px, 4px 28px, 12px 2px, 15px -8px !important;
+      //background-size: 24px 24px !important;
+      background-image: -webkit-linear-gradient(115deg, #fff 9px, transparent 0), -webkit-linear-gradient(295deg, #fff 9px, transparent 0px), -webkit-linear-gradient(115deg, #fff 9px, transparent 0), -webkit-linear-gradient(295deg, #fff 9px, transparent 0);
+      //background-size: 58px 58px !important;
+      //background-position: 0 2px, 4px 35px, 29px 31px, 34px 6px !important;
+      //background-image: -webkit-linear-gradient(115deg, #fff 23px, transparent 23px), -webkit-linear-gradient(295deg, #fff 23px, transparent 23px), -webkit-linear-gradient(115deg, #fff 23px, transparent 23px), -webkit-linear-gradient(295deg, #fff 23px, transparent 23px);
+    }
+  }
+
+  &-pillar {
+    border: 2px solid $dark-bg-color !important;
+    background-color: $dark-bg-color !important;
+
+    &.active {
+      background-color: white !important;
+    }
+  }
+}
+
+.tableM-object-table.reserved {
+  color: #d21a0c;
+}
+
+.tableM-object.active .tableM-delete-icon,
+.tableM-object.active .tableM-edit-icon {
+  display: block;
+}
+
+.tableM-delete-icon {
+  display: none;
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  fill: $error-color;
+  top: 1px;
+  left: 1px;
+  z-index: 15;
+}
+
+.tableM-edit-icon {
+  display: none;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  fill: $dark-brand-color;
+  right: 1px;
+  top: 1px;
+  z-index: 15;
+}
+
+.tableM-info {
+  display: block;
+  text-align: center;
+}
+
+.tableM-label {
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tableM-number {
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: $font-weight-bold;
+}
+
+.tableM-persons {
+  font-size: 18px;
+  font-weight: $font-weight-bold;
+}
+
+.tableM-table-icon {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  fill: $lighter-color;
+}
+
+.tableM-person-icon {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  fill: $lighter-color;
+
+}
+
+.tableM-delete-icon:hover, .tableM-object:hover {
+  cursor: pointer;
+}
+
+.tableM__modal {
+
+  .modal-dialog {
+    width: 610px;
+  }
+
+  &--title {
+    text-align: center;
+    color: $dark-brand-color;
+    font-size: $font-size-big;
+    font-weight: $font-weight-bold;
+    margin-bottom: 20px;
+  }
+
+  &-header {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: row;
+
+    &--list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      margin: 0;
+      width: auto;
+
+      .owl-stage-outer {
+        max-width: 517px;
+      }
+
+      &-item {
+        @include border-radius;
+        @include box-shadow($primary-box-shadow);
+        position: relative;
+        flex: 1;
+        max-width: 200px;
+        margin-right: 1px;
+        overflow: hidden;
+
+        &--link {
+          @include truncate(100%);
+          @include on-event {
+            text-decoration: none;
+          }
+          width: auto;
+          display: block;
+          padding: 12px 15px;
+          position: relative;
+          text-align: center;
+          background-color: #fff;
+          color: $dark-brand-color;
+        }
+
+        &.active {
+          & > a {
+            @include indicator;
+            &:after {
+              right: 6px;
+            }
+          }
+        }
+      }
+    }
+
+    &--button {
+      @include button;
+      @include on-event {
+        background-color: $white-bg-color;
+        text-decoration: none;
+      }
+      @include box-shadow($primary-box-shadow);
+      height: 37px;
+      border-radius: 0;
+      position: relative;
+      background-color: $white-bg-color;
+      color: $text-color;
+      margin-left: 2px;
+      padding: 9px 8px;
+      min-width: 31px;
+      &:hover, &:focus, &:active {
+        box-shadow: none;
+      }
+
+      &-icon {
+        position: relative;
+        width: 13px;
+        height: 13px;
+        transform: rotate(-90deg);
+        fill: $brand-color;
+      }
+    }
+  }
+
+  &-content {
+    @include box-shadow($primary-box-shadow);
+  }
+}
+
+//// Rewrite jquery resizable styles
+.ui-resizable {
+  position: absolute !important;
+}
+
+.ui-icon {
+  //background-image: url(icons.svg#icon-user);
+}

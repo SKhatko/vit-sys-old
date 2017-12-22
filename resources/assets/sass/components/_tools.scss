@@ -1,0 +1,426 @@
+.tools {
+  display: flex;
+
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    max-width: 310px;
+    min-width: 260px;
+
+    &-datetime {
+      display: flex;
+    }
+
+    &-date {
+      max-width: 100px;
+      position: relative;
+      margin-right: 10px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 27px;
+        right: 8px;
+        width: 4px;
+        height: 4px;
+        background-color: $brand-color;
+        @include border-radius(50%);
+      }
+
+      &--label {
+        @include label;
+        display: inline-block;
+      }
+
+      &--today {
+        display: inline-block;
+        font-size: $font-size-regular;
+        border: none;
+        outline: none;
+        color: $brand-color;
+        text-decoration: underline;
+        font-weight: $font-weight-light;
+        background-color: transparent;
+        line-height: 0.9;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      &--input {
+        min-width: 90px;
+        display: block;
+        margin-top: 10px;
+        @include input;
+        @include box-shadow;
+        @include border-radius;
+      }
+    }
+
+    &-time {
+
+      &--lable {
+        @include label;
+      }
+
+      &--buttons {
+        @include border-radius;
+        @include box-shadow;
+        display: flex;
+        margin-top: 10px;
+      }
+
+      &--button {
+        @include input;
+        flex: 1;
+        padding: 13px 8px;
+        position: relative;
+        cursor: pointer;
+        min-width: 50px;
+        text-align: center;
+        margin: 0;
+
+        &:nth-child(2) {
+          min-width: 55px;
+          margin: 0 1px;
+        }
+
+        &:hover {
+          @include indicator;
+        }
+
+        &.active {
+          @include indicator;
+        }
+
+      }
+    }
+
+    &-tables {
+      display: flex;
+      padding: 6px 8px;
+      background-color: $white-bg-color;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      cursor: pointer;
+      @include transition(all .3s ease);
+      @include box-shadow;
+      @include border-radius(20px);
+
+      &:hover {
+        .tools__controls-tables--label {
+          color: $blue-bg-color;
+        }
+
+        .tools__controls-tables--icon {
+          fill: $blue-bg-color;
+        }
+      }
+
+      &--icon {
+        fill: $lightest-text-color;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 28px;
+
+      }
+    }
+
+    &-filters {
+      margin-top: 50px;
+      position: relative;
+
+      &--button {
+        position: absolute;
+        right: 8px;
+        bottom: 21px;
+        cursor: pointer;
+
+        &--icon {
+          position: relative;
+          top: 0;
+          width: 10px;
+          height: 10px;
+          transform: rotate(-90deg);
+          fill: $blue-bg-color
+        }
+      }
+
+      &--input {
+        @include input;
+        @include box-shadow;
+      }
+    }
+  }
+
+  &__statuses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    padding: 20px 15px 0 15px;
+
+    &-radial {
+      display: flex;
+      position: relative;
+
+      .radial-progress {
+        display: block;
+        margin: 0 auto;
+        overflow: hidden;
+        transform: rotate(-90deg) rotateX(180deg);
+      }
+
+      circle {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 1s ease;
+        stroke: $brand-color;
+        stroke-width: 9px;
+      }
+
+      .bar {
+        stroke: $light-bg-color;
+      }
+
+      &--label {
+        position: absolute;
+        bottom: 30%;
+        left: 50%;
+        color: $light-color;
+        transform: translate(-50%, -50%);
+      }
+
+      &-count {
+        display: flex;
+        align-items: baseline;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        color: $light-color;
+        transform: translate(-50%, -50%);
+
+        &--persons {
+          font-size: 38px;
+        }
+
+        &--all {
+          font-size: 20px;
+        }
+      }
+    }
+
+    &-online {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      margin-top: auto;
+
+      &--label {
+        @include label;
+      }
+
+      &-buttons {
+        display: flex;
+        @include border-radius;
+        @include box-shadow;
+        background-color: $white-bg-color;
+        cursor: pointer;
+        margin-top: 10px;
+
+      }
+
+      &-button {
+        min-width: 50px;
+        min-height: 20px;
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 8px;
+          left: 20px;
+          width: 4px;
+          height: 4px;
+          background-color: $lighter-color;
+          @include border-radius(50%);
+        }
+
+        &--icon {
+          display: none;
+        }
+
+        &.active {
+          background-color: $blue-bg-color;
+          @include border-radius;
+
+          &:after {
+            display: none;
+          }
+
+          .tools__statuses-online-button--icon {
+            display: block;
+            margin: 4px auto;
+            position: relative;
+            width: 13px;
+            height: 12px;
+
+            & span {
+              display: inline-block;
+              width: 2px;
+              height: 100%;
+              background: linear-gradient(to bottom, #0b90c2, #4bcdff);
+            }
+          }
+        }
+
+      }
+
+      &-labels {
+        display: flex;
+        align-content: space-between;
+        margin-top: 6px;
+      }
+
+      &-label {
+        min-width: 50px;
+        @include label;
+        text-align: center;
+        font-size: 11px;
+      }
+
+    }
+
+  }
+
+  &__analytics {
+    display: flex;
+    padding: 20px 15px 0 15px;
+
+    &-persons {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      margin-bottom: 50px;
+    }
+
+    &-hours {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 50px;
+      position: relative;
+      margin-bottom: 10px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 20px;
+        height: 150px;
+        width: 1px;
+        background-color: $light-bg-color;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+
+    &-hour {
+      transform: rotate(-45deg);
+      white-space: nowrap;
+    }
+
+    &-bars {
+      display: flex;
+      width: 16px;
+      height: 140px;
+      background-color: $light-bg-color;
+      position: relative;
+      @include border-radius;
+
+      &--reservations {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 8px;
+        background-color: $brand-color;
+        height: 0;
+        cursor: pointer;
+        @include transition(height 0.5s ease)
+      }
+
+      &--persons {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 8px;
+        background-color: rgb(101, 139, 171);
+        height: 0;
+        cursor: pointer;
+        @include transition(height 0.5s ease)
+      }
+    }
+
+  }
+
+}
+
+.tools-lights__modal {
+
+  .modal-dialog {
+    max-width: 300px;
+  }
+
+  &--title {
+    text-align: center;
+    color: $dark-brand-color;
+    font-size: $font-size-big;
+    font-weight: $font-weight-bold;
+    margin-bottom: 20px;
+  }
+
+  &--radio {
+
+  }
+
+  &-columns {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &-select {
+    flex: 4;
+  }
+
+  &-persons {
+
+    flex: 2;
+  }
+
+  &--submit {
+    @include button;
+    font-size: $font-size-big;
+    font-weight: $font-weight-bold;
+    margin: 20px auto 0;
+    min-width: 180px;
+  }
+
+  &--input {
+    @include input;
+  }
+
+  &--label {
+    @include label;
+    margin-bottom: 8px;
+  }
+
+}

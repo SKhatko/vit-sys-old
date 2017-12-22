@@ -1,0 +1,158 @@
+.restaurant {
+
+  &-groups {
+    padding: 0 30px;
+    margin-bottom: 30px;
+
+    &__top {
+      display: flex;
+      margin: 30px 0;
+
+      &--create {
+        @include button;
+        background-color: $brand-color;
+        min-width: 100px;
+      }
+
+    }
+
+    &__content {
+      @include box-shadow($primary-box-shadow);
+    }
+
+    &__header {
+      @include table-header;
+
+      &--name {
+        @include table-header-item;
+        flex: 4;
+      }
+
+      &--description {
+        @include table-header-item;
+        text-align: center;
+        flex: 4;
+      }
+
+      &--courses {
+        @include table-header-item;
+        text-align: center;
+      }
+
+      &--dishes {
+        @include table-header-item;
+        text-align: center;
+      }
+
+      &--edit {
+        @include table-header-item;
+        text-align: center;
+      }
+
+      &--delete {
+        @include table-header-item;
+        text-align: center;
+      }
+    }
+
+    &__group {
+      @include table-row;
+
+      &:last-child {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+
+      &--icon {
+        position: absolute;
+        left: -3px;
+        top: 4px;
+        width: 26px;
+        height: 30px;
+        fill: $light-bg-color;
+        cursor: pointer;
+        z-index: 5;
+      }
+
+      &--name {
+        @include table-content-item;
+        flex: 4;
+        color: $text-color;
+        font-weight: $font-weight-medium;
+      }
+
+      &--description {
+        @include table-content-item;
+        flex: 4;
+        color: $lighter-color;
+      }
+
+      &--courses {
+        @include table-content-item;
+        text-align: center;
+      }
+
+      &--dishes {
+        @include table-content-item;
+        text-align: center;
+      }
+
+      &--edit {
+        @include table-content-item;
+        flex: 1;
+        color: $text-color;
+        text-align: center;
+        padding: 10px 20px;
+
+        &-icon {
+          position: relative;
+          width: 15px;
+          height: 14px;
+          fill: $dark-brand-color;
+          cursor: pointer;
+        }
+      }
+
+      &--delete {
+        @include table-content-item;
+        flex: 1;
+        color: $text-color;
+        text-align: center;
+        margin-right: 0;
+        &-icon {
+          position: relative;
+          width: 11px;
+          height: 11px;
+          fill: $error-color;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__modal-delete {
+
+      .modal-dialog {
+        max-width: 300px;
+      }
+
+      &--title {
+        text-align: center;
+        color: $dark-brand-color;
+        font-size: $font-size-big;
+        font-weight: $font-weight-bold;
+        margin-bottom: 20px;
+      }
+
+      &--content {
+        text-align: center;
+      }
+
+      &--submit {
+        @include modal-submit;
+      }
+
+    }
+
+  }
+
+}

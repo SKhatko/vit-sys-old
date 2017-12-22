@@ -1,0 +1,378 @@
+.restaurant-group {
+  padding: 0 30px;
+
+  &__top {
+    margin-top: 20px;
+    display: flex;
+    margin: 20px -10px 0 -10px;
+
+    &-link {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      bottom: -10px;
+      right: 10px;
+      color: $brand-color;
+
+      &--icon {
+        margin-left: 20px;
+        position: relative;
+        width: 10px;
+        height: 10px;
+        fill: $brand-color;
+      }
+
+    }
+
+    &--name {
+      position: relative;
+      flex: 1 0 30%;
+      padding: 0 10px;
+    }
+
+    &--price {
+      flex: 1 0 20%;
+      padding: 0 10px;
+    }
+
+    &--description {
+      flex: 1 0 50%;
+      padding: 0 10px;
+    }
+  }
+
+  &__create {
+    display: flex;
+    margin-top: 20px;
+    padding: 20px;
+    align-items: center;
+
+    &-link {
+      position: relative;
+      margin-right: 20px;
+      cursor: pointer;
+
+      &--icon {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        transform: rotate(45deg);
+        fill: $brand-color;
+      }
+    }
+
+    &--label {
+      @include label;
+      font-size: $font-size-small;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: none;
+    margin: 0 -10px;
+
+    &.active {
+      display: flex;
+    }
+
+    &-courses {
+      flex: 1 30%;
+      min-width: 300px;
+      padding: 0 10px;
+    }
+
+    &-categories {
+      flex: 1 70%;
+      padding: 0 10px;
+    }
+  }
+
+  &__category {
+    @include border-radius;
+    @include box-shadow($primary-box-shadow);
+    overflow: hidden;
+
+    &-header {
+      background-color: $light-bg-color;
+      padding: 12px 10px 12px 20px;
+      text-align: center;
+      font-weight: $font-weight-medium;
+      color: $dark-brand-color;
+    }
+
+    &-content {
+      @include custom-scrollbar;
+      height: 470px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      border: 1px solid $light-bg-color;
+
+      &-top {
+        padding: 20px 20px 0;
+        display: flex;
+
+      }
+
+      &--select {
+        @include select;
+        flex: 1 60%;
+      }
+
+      &--search {
+        @include input;
+        flex: 1 40%;
+      }
+
+      &-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 20px;
+      }
+
+      &-item {
+        padding: 15px 20px 30px;
+        width: 140px;
+        position: relative;
+        border-bottom: 1px solid $light-bg-color;
+
+        &-img {
+          margin: 0 auto;
+          position: relative;
+          overflow: hidden;
+          width: 90px;
+          height: 90px;
+          background-color: $white-bg-color;
+          @include border-radius(50%);
+          @include box-shadow($primary-box-shadow);
+
+          &--image {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+         &--add {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 33px;
+          height: 33px;
+          left: 52px;
+          top: 90px;
+          background-color: $white-bg-color;
+          @include border-radius(50%);
+          @include box-shadow($primary-box-shadow);
+
+          @include on-event {
+            @include box-shadow($active-box-shadow);
+          }
+
+          &-icon {
+            position: relative;
+            width: 15px;
+            height: 15px;
+            fill: $brand-color;
+            transform: rotate(45deg);
+          }
+        }
+
+        &--name {
+          margin-top: 30px;
+          min-height: 15px;
+          color: $dark-bg-color;
+          font-weight: $font-weight-medium;
+          text-align: center;
+          @include truncate(100%);
+          width: 100%;
+        }
+
+        &--description {
+          margin-top: 10px;
+          min-height: 12px;
+          color: rgb(152, 160, 172);
+          font-size: $font-size-small;
+          text-align: center;
+          @include truncate(100%);
+          width: 100%;
+        }
+
+        &--price {
+          margin-top: 10px;
+          min-height: 12px;
+          color: $dark-bg-color;
+          font-weight: $font-weight-medium;
+          text-align: center;
+          @include truncate(100%);
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__course {
+    @include border-radius;
+    margin-bottom: 30px;
+    border: 1px solid $light-bg-color;
+
+    &.active {
+      @include box-shadow($primary-box-shadow);
+
+      .restaurant-group__course-header--icon {
+        transform: rotate(180deg);
+      }
+
+      .restaurant-group__course-content {
+        display: block;
+      }
+    }
+
+    &-header {
+      background-color: $light-bg-color;
+      //padding: 12px 10px 12px 20px;
+      padding-right: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-link {
+        padding: 12px 0 12px 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        flex: 1;
+        margin-right: 10px;
+        user-select: none;
+      }
+
+      &--name {
+        color: $dark-brand-color;
+        font-weight: $font-weight-medium;
+        margin-right: 5px;
+      }
+
+      &--number {
+        color: $dark-brand-color;
+        font-weight: $font-weight-medium;
+        margin-right: 10px;
+      }
+
+      &--icon {
+        position: relative;
+        width: 10px;
+        height: 10px;
+        fill: $brand-color;
+      }
+
+      &--remove {
+        position: relative;
+        cursor: pointer;
+        width: 11px;
+        height: 11px;
+        fill: $dark-bg-color;
+      }
+    }
+
+    &-content {
+      display: none;
+      padding: 12px 10px 12px 20px;
+
+      &--quantity {
+        @include input;
+        max-width: 60px;
+      }
+
+      &-item {
+        display: flex;
+        padding: 10px 0;
+
+        &--name {
+          flex: 1;
+          font-weight: $font-weight-medium;
+          color: $dark-bg-color;
+          @include truncate(100%);
+        }
+
+        &--remove {
+          cursor: pointer;
+          position: relative;
+          width: 11px;
+          height: 11px;
+          fill: $error-color;
+        }
+      }
+    }
+
+  }
+
+  &__bottom {
+    margin-top: 30px;
+
+    &-checkboxes {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &-online {
+      display: flex;
+      margin-right: 20px;
+    }
+
+    &-preorders {
+      display: flex;
+    }
+
+    &--checkbox {
+      @include checkbox;
+    }
+
+    &--label {
+      @include label;
+      padding-left: 10px;
+      padding-top: 5px;
+    }
+
+    &--submit {
+      @include button-animate;
+      margin: 30px 0 30px auto;
+    }
+  }
+
+  &__modal-languages {
+
+    .modal-dialog {
+      max-width: 600px;
+    }
+
+    &-language {
+      display: flex;
+      margin: 0 -10px;
+
+      &--name {
+        flex: 4 40%;
+        padding: 0 10px;
+      }
+
+      &--description {
+        flex: 6 60%;
+        padding: 0 10px;
+      }
+    }
+
+    &--title {
+      text-align: center;
+      color: $dark-brand-color;
+      font-size: $font-size-big;
+      font-weight: $font-weight-bold;
+      margin-bottom: 20px;
+    }
+
+    &--submit {
+      @include modal-submit;
+    }
+
+  }
+
+}

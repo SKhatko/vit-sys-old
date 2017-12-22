@@ -1,0 +1,138 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.header {
+  background-color: $white-bg-color;
+  min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -15px;
+  padding: 0;
+  border-bottom: 2px solid #d8dde6;
+
+  &-logo {
+    text-align: center;
+    padding: 0 15px;
+    width: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__link {
+      font-style: italic;
+      font-size: $font-size-medium;
+      color: $lighter-color;
+      @include transition(color 0.3s ease);
+
+      &:hover, &:focus {
+        text-decoration: none;
+        color: $dark-brand-color;
+      }
+
+    }
+  }
+
+  &-menu {
+    flex: 1;
+    background-color: $white-bg-color;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    &__item {
+      text-align: center;
+      border-bottom: 3px solid transparent;
+      @include transition(border-bottom 0.3s ease);
+
+      &.active, &:hover, &:focus {
+        border-bottom: 3px solid $brand-color;
+      }
+
+      &-link {
+        display: block;
+        padding: 15px 16px 14px;
+        color: $light-color;
+        font-size: $font-size-medium;
+        @include transition(color 0.3s ease);
+        @include on-event {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &-print {
+    padding: 8px 2% 8px 2%;
+
+    &__button {
+      cursor: pointer;
+      align-self:center;
+      max-height: 33px;
+      min-width: 63px;
+      background-color: transparent;
+      border: 1px solid $brand-color;
+      outline: none;
+      padding-top: 5px;
+      @include border-radius( 20px );
+
+      &:hover {
+        background-color: $brand-color;
+
+        svg {
+          fill: $white-text-color;
+        }
+      }
+
+      svg {
+        fill: $brand-color;
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+  }
+
+  &-profile {
+    @include transition(all 0.3s ease);
+    background-color: $blue-bg-color;
+    min-width: 66px;
+    position: relative;
+    display: flex;
+    padding: 0;
+    height: 50px;
+
+    &.active {
+
+      .header-profile__button--icon-arrow {
+        transform: rotate(180deg);
+      }
+
+      .header-profile__menu {
+        opacity: 1;
+        visibility: visible;
+      }
+
+    }
+
+    &__button {
+      width: 100%;
+      height: 100%;
+      margin: auto 0;
+      background-color: inherit;
+      font-size: $font-size-big;
+      color: $white-text-color;
+      text-align: center;
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      &-logout__link-icon{
+        display: inline-block;
+        height: 20px;
+        width: 17px;
+        fill: $white-bg-color;
+      }
+    }
+  }
+}

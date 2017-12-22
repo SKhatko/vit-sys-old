@@ -1,0 +1,271 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the sidebar of the site/application.
+// -----------------------------------------------------------------------------
+
+.sidebar {
+  background-color: $dark-bg-color;
+  width: 190px;
+  min-height: calc(100vh - 50px);
+  position: relative;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  &-toggle {
+    display: none;
+  }
+
+  &-nav {
+    padding: 50px 0;
+    border-bottom: 1px solid $darker-bg-color;
+    min-height: 215px;
+    flex: none;
+
+    &__menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      &-item {
+        position: relative;
+        margin-right: 20px;
+
+        &--link {
+          position: relative;
+          display: block;
+          border-left: 3px solid transparent;
+          color: rgb( 180, 194, 218);
+          font-size: $font-size-regular;
+          font-weight: 200;
+          padding: 10px 0 10px 20px;
+
+          &:hover, &:focus {
+            text-decoration: none;
+          }
+
+        }
+
+        &--icon {
+          fill: white;
+          position: absolute;
+          right: 0;
+          top: 12px;
+          width: 9px;
+          height: 8px;
+          z-index: 5;
+        }
+
+        &--tail {
+          display: none;
+        }
+
+        &.current {
+
+          .sidebar-nav__menu-item--link {
+            position: relative;
+            display: block;
+            font-size: $font-size-regular;
+            padding: 10px 0 10px 20px;
+            text-decoration: none;
+            color: rgb( 196,206,217 );
+            border-left: 3px solid $blue-bg-color;
+            font-weight: 600;
+          }
+
+          .sidebar-nav__menu-item--tail {
+            display: block;
+            position: absolute;
+            right: -29px;
+            top: 0;
+            height: 32px;
+            width: 22px;
+            fill: $dark-brand-color;
+          }
+
+          .current .sidebar-nav__submenu-item--link {
+            display: block;
+            font-size: $font-size-regular;
+            padding: 10px 0 10px 35px;
+            text-decoration: none;
+            color: rgb( 196,206,217 );
+            font-weight: 600;
+          }
+
+        }
+
+        &.active {
+          .sidebar-nav__menu-item--icon {
+            transform: rotate(180deg);
+          }
+
+          .sidebar-nav__submenu {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+          }
+
+        }
+
+      }
+
+    }
+
+    &__submenu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+
+      &-item {
+
+        &--link {
+          display: block;
+          color: rgb( 134, 150, 177);
+          font-size: $font-size-regular;
+          font-weight: $font-weight-light;
+          padding: 10px 0 10px 35px;
+
+          &:hover, &:focus {
+            text-decoration: none;
+          }
+
+        }
+
+      }
+    }
+
+  }
+
+  &-content {
+    min-height: 280px;
+    border-top: 1px solid rgb(62, 74, 94);
+    border-bottom: 1px solid rgb(62, 74, 94);
+    flex: 1 0 auto;
+  }
+
+  &-footer {
+    flex: none;
+    width: 100%;
+    border-top: 1px solid $darker-bg-color;
+    color: rgb(89, 103, 127);
+    padding: 0 15px;
+
+    &__logo {
+      padding-top: 20px;
+
+      &--icon {
+        fill: #59677f;
+        position: relative;
+        width: 140px;
+        height: 140px;
+      }
+    }
+
+    &__version {
+      padding-left: 5px;
+      font-weight: 300;
+      font-size: $font-size-small;
+      color: rgb(114, 128, 153);
+    }
+
+    &__copyright {
+      padding-left: 5px;
+      font-weight: 300;
+      font-size: $font-size-small;
+      color: rgb(114, 128, 153);
+    }
+
+    &__contact {
+      padding: 10px 0 15px 5px;
+
+      &--link {
+        display: inline-block;
+        color: rgb(114, 128, 153);
+        font-weight: 600;
+        padding-right: 5px;
+
+        &:hover, &:focus {
+          text-decoration: none;
+          color: $lighter-color;
+        }
+
+      }
+    }
+
+  }
+
+  &-calendar {
+    .datepicker.dropdown-menu th, .datepicker.datepicker-inline th, .datepicker.dropdown-menu td, .datepicker.datepicker-inline td {
+      padding: 6px 4px;
+    }
+
+    .datepicker-inline {
+      max-width: 190px;
+    }
+  }
+
+
+}
+
+@media (max-width: 991px) {
+  .sidebar {
+    margin-left: -175px;
+    @include transition(all 0.4s ease-out);
+
+    &-calendar {
+      display: none;
+    }
+
+    .sidebar-nav__menu-item--tail {
+      display: none !important;
+    }
+
+    &--active {
+      margin-left: 0;
+    }
+
+    &--active .sidebar-calendar {
+      display: block;
+    }
+
+    &-toggle {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -15px;
+      width: 40px;
+      height: 35px;
+      background-color: $dark-bg-color;
+      border-bottom-right-radius: 50%;
+      -webkit-border-bottom-right-radius: 50%;
+      padding-top: 4px;
+      padding-left: 9px;
+      z-index: 1;
+
+      &__button {
+        cursor: pointer;
+        background-color: $dark-bg-color;
+        outline: none;
+        border: none;
+        color: $white-text-color;
+        font-size: 20px;
+        @include transition(color 0.3s ease);
+
+        &--icon {
+          fill: $white-bg-color;
+          position: relative;
+          left: 4px;
+          width: 15px;
+          height: 15px;
+
+          &:hover {
+            fill: $lighter-color
+          }
+        }
+      }
+    }
+
+  }
+}

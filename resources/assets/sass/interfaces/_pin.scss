@@ -1,0 +1,31 @@
+.pin {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  height: 100%;
+  padding-top: 25vh;
+
+  &-form {
+    max-width: 270px;
+
+    &--title {
+      text-align: center;
+      color: $dark-brand-color;
+      font-size: 16px;
+      font-weight: $font-weight-bold;
+      margin-bottom: 20px;
+    }
+
+    &--mesage {
+      color: $lighter-color;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    &--submit {
+      @include button-animate;
+      margin: 20px auto;
+    }
+  }
+}

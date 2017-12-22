@@ -1,0 +1,62 @@
+@charset "UTF-8";
+///
+
+//@import '~owl.carousel/dist/assets/owl.carousel.css';
+//.owl-stage{
+//  position: absolute !important;
+//}
+//.owl-stage-outer{
+//  height: 100%;
+//}
+//.owl-carousel{
+//  position: relative;
+//  height: 100%;
+//}
+///
+// 1. Configuration and helpers
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// 2. Vendors
+@import 'vendor/normalize';
+@import 'vendor/owl.carousel/owl.carousel.css';
+//@import "vendor/bootstrap-3/stylesheets/bootstrap/variables";
+//@import "vendor/bootstrap-3/stylesheets/bootstrap/mixins";
+//@import "vendor/bootstrap-3/stylesheets/bootstrap/navs";
+//@import 'vendor/font-awesome/css/font-awesome';
+@import 'vendor/bootstrap-datepicker.standalone';
+@import 'vendor/datatables.net-dt/css/jquery.dataTables';
+@import 'vendor/jquery.timepicker';
+@import 'vendor/jquery-ui/jquery-ui';
+@import 'vendor/croppic/croppic';
+@import 'vendor/daterangepicker';
+
+
+// 3. Base stuff
+@import 'base/base';
+@import 'base/helpers';
+
+// 4. Layout-related sections
+@import 'layout/header';
+@import 'layout/sidebar';
+
+// 5. Components
+@import 'components/tables-plan';
+@import 'components/modal';
+@import 'components/tools';
+@import 'components/data-table';
+@import 'components/error';
+@import 'components/back';
+@import 'components/tooltip';
+@import 'components/alert';
+
+// 6. Page-specific styles
+@import 'interfaces/auth';
+@import 'interfaces/pin';
+@import 'interfaces/reception';
+@import 'interfaces/kitchen';
+@import 'interfaces/restaurant';
+@import 'interfaces/crm';
+@import 'interfaces/admin';
+
+

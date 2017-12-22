@@ -1,0 +1,55 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.space-bottom {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.label {
+  @include label;
+  margin-bottom: 8px;
+}
+
+.input {
+  @include input;
+}
+
+.select{
+  @include select;
+}
+
+.validation {
+  position: absolute;
+  padding: 16px 0;
+  color: red;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+// Stolen from bootstrap :)
+.tab-content > .tab-pane {
+  display: none;
+}
+
+.tab-content > .active {
+  display: block;
+}
+
+

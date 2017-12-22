@@ -1,0 +1,322 @@
+.restaurant {
+
+  &-plan {
+    padding: 0 15px;
+
+    &__header {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin: 45px -10px 40px -10px;
+
+      &-plans {
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        min-width: 500px;
+        padding: 0 10px;
+        margin: 10px;
+        max-width: 300px;
+
+        &-select {
+          flex: 1;
+          margin-right: 20px;
+
+          &-plans {
+            @include select;
+            margin-bottom: 0;
+          }
+        }
+
+        &-add {
+          @include button;
+          background-color: $white-bg-color;
+          min-width: 45px;
+          border: none;
+          padding-top: 11px;
+
+          &:hover {
+            background-color: $blue-bg-color;
+
+            svg {
+              fill: $white-text-color;
+            }
+          }
+
+          &--icon {
+            position: relative;
+            width: 13px;
+            height: 13px;
+            transform: rotate(45deg);
+            fill: $brand-color;
+          }
+        }
+
+      }
+
+      &-sections {
+        margin: 10px;
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 10px;
+
+        &-select {
+          //flex: 1;
+          position: relative;
+          height: 100%;
+          display: flex;
+          flex-direction:column;
+
+          .owl-carousel {
+            min-width: 250px;
+            margin: 0;
+            padding: 0;
+          }
+
+          &-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .2s linear;
+
+            &--item {
+              position: relative;
+              list-style: none;
+
+              a {
+                @include truncate(140px);
+                width: auto;
+              }
+
+              &.active {
+                @include indicator();
+
+                &:after {
+                  right: 10px;
+                }
+              }
+            }
+          }
+
+          &--link {
+            @include button;
+            @include on-event {
+              background-color: $white-bg-color;
+              text-decoration: none;
+            }
+            box-shadow: none;
+            border-radius: 0;
+            position: relative;
+            flex: 1;
+            background-color: $white-bg-color;
+            color: $text-color;
+            margin-right: 1px;
+            padding-right: 20px;
+            &:hover, &:focus, &:active {
+              box-shadow: none;
+            }
+          }
+        }
+
+        &-show {
+          @include button;
+          @include on-event {
+            background-color: $white-bg-color;
+            text-decoration: none;
+          }
+          padding-top: 10px;
+          padding-bottom: 10px;
+          min-width: 0;
+          box-shadow: none;
+          border-radius: 0;
+          position: relative;
+          background-color: $white-bg-color;
+          color: $text-color;
+          margin-left: 1px;
+          margin-right: 5px;
+          &:hover, &:focus, &:active {
+            box-shadow: none;
+          }
+
+          &--icon {
+            position: relative;
+            width: 13px;
+            height: 13px;
+            transform: rotate(-90deg);
+            fill: $brand-color;
+          }
+        }
+
+
+        &-add {
+          @include button;
+          background-color: $white-bg-color;
+          min-width: 45px;
+          border: none;
+          padding-top: 11px;
+
+          &:hover {
+            background-color: $blue-bg-color;
+
+            svg {
+              fill: $white-text-color;
+            }
+          }
+
+          &--icon {
+            position: relative;
+            width: 13px;
+            height: 13px;
+            transform: rotate(45deg);
+            fill: $brand-color;
+          }
+        }
+
+      }
+
+      @media (max-width: 700px) {
+        flex-direction: column;
+      }
+    }
+
+    &__tools {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      margin-bottom: 30px;
+
+      &-buttons {
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      &-button {
+        cursor: not-allowed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        min-width: 70px;
+        margin-right: 20px;
+        background-color: $white-bg-color;
+        @include border-radius(30px);
+        @include box-shadow($primary-box-shadow);
+
+        @include on-event {
+          @include box-shadow($active-box-shadow);
+
+          & .restaurant-plan__tools-button--icon {
+            fill: $dark-brand-color;
+          }
+        }
+
+        &.active {
+          cursor: pointer;
+
+          @include on-event {
+            @include box-shadow($active-box-shadow);
+
+            & .restaurant-plan__tools-button--icon {
+              fill: $brand-color;
+            }
+          }
+        }
+
+        &--icon {
+          position: relative;
+          width: 23px;
+          height: 23px;
+          fill: $dark-brand-color;
+        }
+      }
+
+      &-properties {
+        display: flex;
+        //@include opacity(0);
+        opacity: 0.7;
+
+        &-wrapper {
+          display: flex;
+          flex-flow: row nowrap;
+        }
+
+        &-input {
+          min-width: 60px;
+          margin-right: 20px;
+          pointer-events: none;
+        }
+
+        &.active {
+          opacity: 1;
+          .restaurant-plan__tools-properties-input {
+            pointer-events: all;
+          }
+        }
+
+        &-save {
+          display: none;
+
+          &--submit {
+            @include button-animate;
+            margin-top: 20px;
+          }
+        }
+      }
+
+    }
+
+    &__content {
+      .section-map {
+        @include box-shadow($primary-box-shadow);
+      }
+    }
+
+    &__modal-create {
+
+      .modal-dialog {
+        max-width: 300px;
+      }
+
+      &--title {
+        text-align: center;
+        color: $dark-brand-color;
+        font-size: $font-size-big;
+        font-weight: $font-weight-bold;
+        margin-bottom: 20px;
+      }
+
+      &--submit {
+        @include modal-submit;
+      }
+
+    }
+
+    &__modal-edit {
+
+      .modal-dialog {
+        max-width: 300px;
+      }
+
+      &--title {
+        text-align: center;
+        color: $dark-brand-color;
+        font-size: $font-size-big;
+        font-weight: $font-weight-bold;
+        margin-bottom: 20px;
+      }
+
+      &--submit {
+        @include modal-submit;
+      }
+
+    }
+  }
+
+}

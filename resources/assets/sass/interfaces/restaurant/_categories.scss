@@ -1,0 +1,243 @@
+.restaurant {
+
+  &-categories {
+    padding: 0 15px;
+    margin-bottom: 30px;
+
+    &__create {
+      display: flex;
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+      &--button {
+        @include button-animate;
+      }
+    }
+
+    &__header {
+      @include table-header;
+
+      &--name {
+        @include table-header-item;
+      }
+
+      &--categories {
+        @include table-header-item;
+        max-width: 100px;
+        padding: 12px 0;
+        text-align: center;
+      }
+
+      &--dishes {
+        @include table-header-item;
+        max-width: 85px;
+        padding: 12px 0;
+        text-align: center;
+      }
+
+      &--edit {
+        @include table-header-item;
+        max-width: 65px;
+        padding: 12px 0;
+        text-align: center;
+      }
+
+      &--delete {
+        @include table-header-item;
+        max-width: 65px;
+        padding: 12px 0;
+        text-align: center;
+      }
+    }
+
+    &__content {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      &-item {
+        position: relative;
+        list-style: none;
+
+        &:last-child {
+          border-bottom-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+        }
+
+        &-wrapper {
+          @include table-row;
+
+          &--icon {
+            position: absolute;
+            left: -3px;
+            top: 4px;
+            width: 26px;
+            height: 30px;
+            fill: $light-bg-color;
+            cursor: pointer;
+            z-index: 5;
+          }
+
+          &--name {
+            flex: 1;
+            display: block;
+            padding: 12px 20px;
+            color: $text-color;
+            margin-right: 1px;
+            background-color: $white-bg-color;
+            position: relative;
+
+            &-link {
+              cursor: pointer;
+            }
+
+            &-icon {
+              position: absolute;
+              right: 20px;
+              top: 13px;
+              width: 10px;
+              height: 10px;
+              fill: $brand-color;
+              cursor: pointer;
+              //transform: rotate(180deg);
+              z-index: 5;
+            }
+          }
+
+          &--categories {
+            @include table-content-item;
+            max-width: 100px;
+            text-align: center;
+          }
+
+          &--dishes {
+            @include table-content-item;
+            max-width: 85px;
+            text-align: center;
+
+            &-link {
+              display: block;
+
+              &-icon {
+                position: relative;
+                width: 13px;
+                height: 13px;
+                fill: $brand-color;
+                cursor: pointer;
+                z-index: 5;
+              }
+            }
+          }
+
+          &--edit {
+            @include table-content-item;
+            max-width: 65px;
+            text-align: center;
+            padding: 9px 20px;
+
+            &-icon {
+              position: relative;
+              width: 16px;
+              height: 16px;
+              fill: $dark-brand-color ;
+              cursor: pointer;
+              z-index: 5;
+            }
+          }
+
+          &--delete {
+            @include table-content-item;
+            margin-right: 0;
+            max-width: 65px;
+            text-align: center;
+
+            &-icon {
+              position: relative;
+              width: 11px;
+              height: 11px;
+              fill: $error-color;
+              cursor: pointer;
+            }
+          }
+        }
+
+        &-sub {
+          display: none;
+          position: relative;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          .restaurant-categories__content-item {
+            padding-left: 30px;
+
+            &:before {
+              content: '';
+              position: absolute;
+              left: 10px;
+              top: 5px;
+              width: 14px;
+              height: 14px;
+              background: url("../../../images/angle.svg") no-repeat !important;
+            }
+          }
+        }
+
+        &.active {
+
+          & > .restaurant-categories__content-item-sub {
+            display: block;
+          }
+
+          & > div .restaurant-categories__content-item-wrapper--name-icon {
+            transform: rotate(180deg);
+          }
+        }
+
+        &.empty {
+
+          & > div .restaurant-categories__content-item-wrapper--name-icon {
+            display: none;
+          }
+
+        }
+
+      }
+    }
+
+    &__modal-delete {
+
+      .modal-dialog {
+        max-width: 300px;
+      }
+
+      &--title {
+        text-align: center;
+        color: $dark-brand-color;
+        font-size: $font-size-big;
+        font-weight: $font-weight-bold;
+        margin-bottom: 20px;
+      }
+
+      &--content {
+        text-align: center;
+      }
+
+      &--submit {
+        @include modal-submit;
+      }
+
+    }
+
+
+  }
+
+}

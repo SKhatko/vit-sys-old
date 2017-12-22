@@ -1,0 +1,172 @@
+.restaurant {
+
+  &-sections {
+    padding: 0 30px;
+
+    &__create {
+      display: flex;
+
+      &--name {
+        flex: 1;
+        margin-right: 24px;
+      }
+
+      &--desc {
+        flex: 1;
+        margin-right: 31px;
+      }
+
+      &--submit {
+        @include button-animate;
+        align-self: flex-end;
+        margin-bottom: 10px;
+        padding-top: 11px;
+        font-weight: $font-weight-bold;
+        min-width: 100px;
+      }
+
+    }
+
+    &__list {
+      @include box-shadow( $primary-box-shadow );
+      margin: 30px 0;
+
+      &-header {
+        @include table-header;
+
+        &--name {
+          @include table-header-item;
+          flex: 4;
+        }
+
+        &--desc {
+          @include table-header-item;
+          flex: 6;
+        }
+
+        &--edit {
+          @include table-header-item;
+          text-align: center;
+          color: $dark-brand-color;
+        }
+
+        &--delete {
+          @include table-header-item;
+          text-align: center;
+          color: $dark-brand-color;
+        }
+      }
+
+      &-item {
+        @include table-row;
+
+        &:last-child {
+          border-bottom-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+        }
+
+        &-icon {
+          position: absolute;
+          left: -3px;
+          top: 4px;
+          width: 26px;
+          height: 30px;
+          fill: $light-bg-color;
+          cursor: pointer;
+          z-index: 5;
+        }
+
+        &--name {
+          @include table-content-item;
+          flex: 4;
+          color: $dark-bg-color;
+          font-weight: $font-weight-medium;
+        }
+
+        &--desc {
+          @include table-content-item;
+          flex: 6;
+          font-weight: $font-weight-light;
+          color: $lighter-color;
+          font-style: italic;
+        }
+
+        &--edit {
+          @include table-content-item;
+          color: $text-color;
+          text-align: center;
+
+          &-icon {
+            position: relative;
+            width: 15px;
+            height: 14px;
+            fill: $dark-brand-color;
+            cursor: pointer;
+          }
+        }
+
+        &--delete {
+          @include table-content-item;
+          color: $text-color;
+          text-align: center;
+          margin-right: 0;
+
+          &-icon {
+            position: relative;
+            width: 11px;
+            height: 11px;
+            fill: $error-color;
+            cursor: pointer;
+          }
+        }
+      }
+
+    }
+
+    &__modal-edit {
+
+      .modal-dialog {
+        max-width: 300px;
+      }
+
+      &--title {
+        text-align: center;
+        color: $dark-brand-color;
+        font-size: $font-size-big;
+        font-weight: $font-weight-bold;
+        margin-bottom: 20px;
+      }
+
+      &--submit {
+        @include modal-submit;
+      }
+
+    }
+
+    &__modal-delete {
+
+      .modal-dialog {
+        max-width: 300px;
+      }
+
+      &--title {
+        text-align: center;
+        color: $dark-brand-color;
+        font-size: $font-size-big;
+        font-weight: $font-weight-bold;
+        margin-bottom: 20px;
+      }
+
+      &--content {
+        text-align: center;
+      }
+
+      &--submit {
+        @include modal-submit;
+      }
+
+    }
+
+  }
+
+}

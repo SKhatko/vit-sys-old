@@ -1,0 +1,164 @@
+.restaurant {
+
+  &-category {
+    padding: 0 15px;
+
+    &__header {
+      margin-bottom: 45px;
+    }
+
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      position: relative;
+      margin: 0 -10px;
+
+      &-data {
+        flex: 4 40%;
+        min-width: 400px;
+        padding: 0 10px;
+
+        &-img {
+          display: flex;
+          justify-content: center;
+          position: relative;
+          margin-bottom: 35px;
+
+          &--centered {
+            position: relative;
+            max-width: 135px;
+          }
+
+          &--wrapper {
+            overflow: hidden;
+            @include border-radius(50%);
+            @include box-shadow($primary-box-shadow);
+            background-color: #fff;
+            width: 135px;
+            height: 135px;
+            position: relative;
+          }
+
+          &--image {
+            width: 100%;
+            height: auto;
+            position: absolute;
+
+            &.disabled {
+              display: none;
+            }
+          }
+
+          &--remove {
+            position: absolute;
+            top: 0;
+            right: 2px;
+
+            &-icon {
+              position: relative;
+              width: 13px;
+              height: 13px;
+              fill: $light-bg-color;
+            }
+          }
+
+          &--upload {
+            z-index: 5;
+            cursor: pointer;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            bottom: -18px;
+            left: 50px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include border-radius(50%);
+            @include box-shadow($primary-box-shadow);
+
+            @include on-event {
+              @include box-shadow($active-box-shadow);
+            }
+
+            &-icon {
+              position: relative;
+              width: 18px;
+              height: 18px;
+              fill: $light-bg-color;
+            }
+          }
+
+          &--croppic {
+            position: relative;
+            width: 300px;
+            height: 300px;
+
+            & img {
+              width: 135px;
+              height: 135px;
+            }
+          }
+
+        }
+
+        &-columns {
+          display: flex;
+        }
+
+        &-name {
+          flex: 1;
+          margin-right: 20px;
+        }
+
+        &-category {
+          flex: 1;
+        }
+      }
+
+      &-languages {
+        flex: 6 60%;
+        padding: 0 10px;
+
+
+        &-wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          border: 1px solid $light-bg-color;
+          @include border-radius;
+          padding: 10px 0;
+        }
+
+        &--title {
+          @include label;
+          padding-left: 15px;
+          padding-bottom: 5px;
+          font-weight: 600;
+          color: $dark-brand-color;
+        }
+
+        &-item {
+          flex: 1;
+          flex-basis: 40%;
+          margin: 0 15px;
+        }
+
+      }
+
+    }
+
+    &-submit {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 30px;
+
+      &__button {
+        @include button-animate;
+      }
+    }
+
+  }
+
+}

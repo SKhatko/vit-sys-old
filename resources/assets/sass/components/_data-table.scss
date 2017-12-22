@@ -1,0 +1,42 @@
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+.table {
+  @include border-radius;
+  @include box-shadow($primary-box-shadow);
+  background-color: $white-bg-color;
+  overflow: hidden;
+
+  &:first-child thead {
+    display: table-header-group;
+    background-color: $light-bg-color;
+    color: $dark-brand-color;
+    border-bottom: 3px solid red;
+  }
+
+  table {
+    border: none !important;
+    text-align: center;
+
+    thead {
+      display: none;
+
+      th {
+        border: none;
+      }
+    }
+  }
+
+  &__header {
+    color: $dark-brand-color;
+    padding: 20px 20px 10px;
+  }
+
+}
+
+.dataTables_filter {
+  display: none;
+}

@@ -1,0 +1,31 @@
+.back {
+  display: flex;
+  position: relative;
+  padding-left: 20px;
+
+  &__link {
+    position: relative;
+    color: $dark-brand-color;
+
+    @include on-event {
+      color: $brand-color;
+
+      .back__link--icon {
+        fill: $brand-color;
+      }
+    }
+
+    &--text {
+      text-decoration: underline;
+    }
+
+    &--icon {
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      left: -20px;
+      fill: $dark-brand-color;
+      transform: rotate(90deg);
+    }
+  }
+}

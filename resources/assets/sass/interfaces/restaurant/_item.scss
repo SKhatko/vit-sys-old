@@ -1,0 +1,322 @@
+.restaurant {
+
+  &-item {
+    padding: 0 15px;
+
+    &__header {
+      margin-bottom: 45px;
+    }
+
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      &-data {
+        flex: 3;
+        margin-right: 35px;
+
+        &-img {
+          display: flex;
+          justify-content: center;
+          position: relative;
+          margin-bottom: 35px;
+
+          &--centered {
+            position: relative;
+            max-width: 135px;
+          }
+
+          &--wrapper {
+            overflow: hidden;
+            @include border-radius(50%);
+            @include box-shadow($primary-box-shadow);
+            background-color: #fff;
+            width: 135px;
+            height: 135px;
+            position: relative;
+          }
+
+          &--image {
+            width: 100%;
+            height: auto;
+            position: absolute;
+
+            &.disabled {
+              display: none;
+            }
+          }
+
+          &--remove {
+            position: absolute;
+            top: 0;
+            right: 2px;
+
+            &-icon {
+              position: relative;
+              width: 13px;
+              height: 13px;
+              fill: $light-bg-color;
+            }
+          }
+
+          &--upload {
+            z-index: 5;
+            cursor: pointer;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            bottom: -18px;
+            left: 50px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include border-radius(50%);
+            @include box-shadow($primary-box-shadow);
+
+            @include on-event {
+              @include box-shadow($active-box-shadow);
+            }
+
+            &-icon {
+              position: relative;
+              width: 18px;
+              height: 18px;
+              fill: $light-bg-color;
+            }
+          }
+
+          &--croppic {
+            position: relative;
+            width: 300px;
+            height: 300px;
+
+            & img {
+              width: 135px;
+              height: 135px;
+            }
+          }
+        }
+      }
+
+      &-food {
+        flex: 2;
+        margin-right: 35px;
+        @include box-shadow($primary-box-shadow);
+        @include border-radius;
+
+        &-header {
+          @include table-header;
+          margin: 0;
+
+          &--name {
+            @include table-header-item;
+          }
+
+          &--count {
+            color: $lighter-color;
+          }
+        }
+
+        &-content {
+          border-bottom-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+          border: 1px solid $light-bg-color;
+          border-top: none;
+          padding-top: 5px;
+          overflow-y: scroll;
+          max-height: 422px;
+          @include  custom-scrollbar;
+
+          &-item {
+            display: flex;
+            margin: 0 20px;
+            border-bottom: 1px solid $light-bg-color;
+
+            &:last-of-type {
+              border-bottom: none;
+            }
+          }
+
+          &--select {
+            flex: 1;
+            padding: 9px 10px 9px 0;
+            color: $text-color;
+            position: relative;
+
+            &-checkbox {
+              @include checkbox;
+              width: auto;
+              margin: 0 auto 0 4px;
+            }
+          }
+
+          &--name {
+            flex: 5;
+            padding: 12px 0;
+            font-weight: 600;
+            color: $lighter-color;
+          }
+        }
+      }
+
+      &-drink {
+        flex: 2;
+        margin-right: 35px;
+        @include box-shadow($primary-box-shadow);
+        @include border-radius;
+
+        &-header {
+          @include table-header;
+          margin-bottom: 0;
+
+          &--name {
+            @include table-header-item;
+            background-color: $light-bg-color;
+          }
+
+          &--count {
+            color: $lighter-color;
+          }
+        }
+
+        &-content {
+          border-bottom-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+          overflow-y: scroll;
+          max-height: 422px;
+          padding-top: 5px;
+          border: 1px solid $light-bg-color;
+          border-top: none;
+          @include  custom-scrollbar;
+
+          &-item {
+            display: flex;
+            margin: 0 20px;
+            border-bottom: 1px solid $light-bg-color;
+
+            &:last-of-type {
+              border-bottom: none;
+            }
+          }
+
+          &--select {
+            flex: 1;
+            padding: 9px 10px 9px 0;
+            color: $text-color;
+            margin-right: 1px;
+            position: relative;
+
+            &-checkbox {
+              @include checkbox;
+              width: auto;
+              margin: 0 auto 0 4px;
+            }
+          }
+
+          &--name {
+            flex: 5;
+            padding: 12px 0 ;
+            font-weight: 600;
+            color: $lighter-color;
+          }
+        }
+      }
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+
+      &-languages {
+        text-align: center;
+
+        &-link {
+          display: flex;
+          position: relative;
+          padding-right: 20px;
+          text-decoration: underline;
+          color: $brand-color;
+
+          @include on-event {
+            color: $brand-color;
+
+            .restaurant-item__back--icon {
+              fill: $brand-color;
+            }
+          }
+
+          &--icon {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right: 0;
+            top: 2px;
+            fill: $brand-color;
+            transform: rotate(-90deg);
+          }
+        }
+      }
+
+      &-checkboxes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-checkbox {
+        @include checkbox;
+        margin-left: 30px;
+
+        &--label {
+          @include label;
+          margin-top: 5px;
+        }
+      }
+
+    }
+
+    &-submit {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 30px;
+
+      &__button {
+        @include button-animate;
+      }
+    }
+
+    &__modal-languages {
+
+      &--title {
+        text-align: center;
+        color: $dark-brand-color;
+        font-size: $font-size-big;
+        font-weight: $font-weight-bold;
+        margin-bottom: 30px;
+      }
+
+      &-content {
+        display: flex;
+        margin-bottom: 10px;
+
+        &--name {
+          flex: 1;
+          margin-right: 20px;
+        }
+
+        &--description {
+          flex: 2;
+        }
+      }
+
+      &--submit {
+        @include modal-submit;
+      }
+    }
+
+  }
+
+}

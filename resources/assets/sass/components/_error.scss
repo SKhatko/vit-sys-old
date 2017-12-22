@@ -1,0 +1,37 @@
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../images/oops-man.svg") no-repeat right bottom;
+  min-height: calc(100vh - 85px);
+  -webkit-background-size: 35% 60%;
+  background-size: 35% 60%;
+
+  overflow: hidden;
+
+  &-block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__title {
+      font-size: 48px;
+      color: $brand-color;
+      margin-bottom: 20px;
+    }
+
+    &__content {
+      max-width: 200px;
+      color: $dark-brand-color;
+    }
+
+    &__link {
+      margin-top: 20px;
+      @include button;
+      @include on-event {
+        color: white;
+      }
+
+    }
+  }
+}

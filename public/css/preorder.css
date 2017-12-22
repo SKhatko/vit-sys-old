@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.content {
+    padding: 50px 0;
+}
+
+.form-control[readonly] {
+    background: #fff;
+}
+
+.form-control[disabled] {
+    background: #eee;
+}
+
+.mboth {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.mtop {
+    margin-top: 25px;
+}
+
+.mbottom {
+    margin-bottom: 25px;
+}
+
+.calign {
+    text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+
+    .xs-hide {
+        display: none;
+    }
+
+    .step span.step-content {
+        display: none;
+    }
+
+    .mnone-xs {
+        margin: 0;
+    }
+
+    .mtop-xs {
+        margin-bottom: 0;
+        margin-top: 25px;
+    }
+
+    header {
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 18px;
+        line-height: 40px;
+    }
+
+    #language-select {
+        position: static;
+        text-align: center;
+        margin: 10px auto 0;
+    }
+}

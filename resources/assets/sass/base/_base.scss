@@ -1,0 +1,132 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+
+
+body {
+  color: $text-color;
+  font-family: $font-family-text;
+  font-weight: $font-weight-light;
+  font-size: $font-size-regular;
+  background-color: $lighter-bg-color;
+  height: 100%;
+  @include custom-scrollbar;
+
+}
+
+body * {
+  @include custom-scrollbar;
+  font-family: $font-family-text;
+  font-weight: $font-weight-light;
+  font-size: $font-size-regular;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.app {
+  height: 100%;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  cursor: default;
+}
+
+.main {
+  margin: 0 -15px;
+  display: flex;
+}
+
+.content {
+  //border-top: 2px solid $light-bg-color;
+  position: relative;
+  min-height: calc(100vh - 55px);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 30px 15px 0 15px;
+}
+
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  @include on-event {
+    text-decoration: none;
+  }
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0;
+
+  li {
+    padding: 0 4px;
+    font-size: 13px;
+    min-width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    font-weight: 400;
+    border-bottom: 2px solid transparent;
+    color: #333;
+
+    &.active, &:not(.disabled):hover {
+      border-bottom-color: lighten($brand-color, 30%);
+
+      span {
+        color: $brand-color;
+      }
+    }
+
+    &:first-of-type {
+      margin-right: 10px;
+
+      &:hover {
+        border-bottom-color: transparent;
+        a{
+          color: $brand-color;
+        }
+      }
+    }
+
+    &:last-of-type {
+      margin-left: 10px;
+
+      &:hover {
+        border-bottom-color: transparent;
+        a{
+          color: $brand-color;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      color: $text-color;
+    }
+  }
+}
+
+
+

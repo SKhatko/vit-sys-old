@@ -1,0 +1,25 @@
+@import 'restaurant/sections';
+@import 'restaurant/plans';
+@import 'restaurant/plan';
+@import 'restaurant/schedule';
+@import 'restaurant/categories';
+@import 'restaurant/category';
+@import 'restaurant/items';
+@import 'restaurant/item';
+@import 'restaurant/groups';
+@import 'restaurant/group';
+@import 'restaurant/menus';
+@import 'restaurant/menu';
+
+.restaurant {
+
+  &__label {
+    @include label;
+    margin-bottom: 8px;
+  }
+
+  &__input {
+    @include input;
+  }
+
+}

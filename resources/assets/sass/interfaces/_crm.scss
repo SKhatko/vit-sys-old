@@ -1,0 +1,651 @@
+.clients {
+  padding: 0 30px;
+
+  &-header {
+    display: flex;
+
+    &__name {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    &__phone {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    &__email {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    &__status {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    &__control {
+      display: flex;
+
+      &--submit {
+        @include button-animate;
+        margin: 20px 20px 10px 0;
+        min-width: 100px;
+      }
+
+      &--clear {
+        @include border-radius;
+        margin: 20px 0 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        background-color: #fff;
+
+        &-icon {
+          position: relative;
+          fill: $error-color;
+          width: 13px;
+          height: 13px;
+        }
+      }
+    }
+  }
+
+  &-content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    @include box-shadow($primary-box-shadow);
+
+    &__header {
+      @include table-header;
+
+      &--name {
+        @include table-header-item;
+      }
+
+      &--phone {
+        @include table-header-item;
+      }
+
+      &--mobile {
+        @include table-header-item;
+      }
+
+      &--email {
+        @include table-header-item;
+      }
+
+      &--reservations {
+        @include table-header-item;
+        text-align: center;
+      }
+
+      &--status {
+        @include table-header-item;
+        text-align: center;
+      }
+    }
+
+    &__create {
+      overflow: hidden;
+      margin-bottom: 1px;
+      padding: 12px 20px;
+      position: relative;
+      background-color: #fff;
+
+      &-link {
+        position: relative;
+
+        &--icon {
+          position: absolute;
+          top: -2px;
+          width: 14px;
+          height: 14px;
+          fill: $brand-color;
+        }
+
+        &--label {
+          @include label;
+          font-size: 10px;
+          margin-left: 30px;
+        }
+
+      }
+    }
+
+    &__client {
+      @include table-row;
+      //display: flex;
+      //margin-bottom: 1px;
+      //position: relative;
+
+      &:last-child {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+
+      &--name {
+        @include table-content-item;
+        color: $dark-bg-color;
+        font-weight: 600;
+        text-decoration: none;
+
+        @include on-event {
+          color: $dark-bg-color;
+        }
+      }
+
+      &--phone {
+        @include table-content-item;
+        color: $lighter-color;
+      }
+
+      &--mobile {
+        @include table-content-item;
+        color: $lighter-color;
+      }
+
+      &--email {
+        @include table-content-item;
+        color: $lighter-color;
+      }
+
+      &--reservations {
+        @include table-content-item;
+        color: $lighter-color;
+        text-align: center;
+      }
+
+      &--status {
+        @include table-content-item;
+        color: $dark-bg-color;
+        text-align: center;
+        font-weight: 600;
+        margin-right: 0;
+      }
+    }
+
+  }
+
+  &__modal-create {
+
+    .modal-dialog {
+      max-width: 300px;
+    }
+
+    &--title {
+      text-align: center;
+      color: $dark-brand-color;
+      font-size: $font-size-big;
+      font-weight: $font-weight-bold;
+      margin-bottom: 20px;
+    }
+
+    &--submit {
+      @include modal-submit;
+    }
+
+  }
+
+}
+
+.client {
+  padding: 0 30px;
+
+  &-info {
+    margin-top: 40px;
+    @include box-shadow($primary-box-shadow);
+
+    &__header {
+      @include table-header;
+
+      &--name {
+        @include table-header-item;
+      }
+
+      &--phone {
+        @include table-header-item;
+        text-align: center;
+      }
+
+      &--mobile {
+        @include table-header-item;
+        text-align: center;
+      }
+
+      &--email {
+        @include table-header-item;
+        text-align: center;
+      }
+
+      &--status {
+        @include table-header-item;
+        text-align: center;
+      }
+
+      &--note {
+        @include table-header-item;
+        text-align: center;
+      }
+
+      &--edit {
+        @include table-header-item;
+        text-align: center;
+      }
+
+    }
+
+    &__client {
+      @include table-row;
+      //display: flex;
+      //margin-bottom: 1px;
+      //position: relative;
+
+      &:last-child {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+
+      &--name {
+        @include table-content-item;
+        text-decoration: none;
+        color: $dark-bg-color;
+        font-weight: $font-weight-medium;
+
+        @include on-event {
+          color: $dark-bg-color;
+        }
+      }
+
+      &--phone {
+        @include table-content-item;
+        text-align: center;
+        color: $dark-bg-color;
+        font-weight: $font-weight-medium;
+      }
+
+      &--mobile {
+        @include table-content-item;
+        text-align: center;
+        color: $dark-bg-color;
+        font-weight: $font-weight-medium;
+      }
+
+      &--email {
+        @include table-content-item;
+        text-align: center;
+        color: $dark-bg-color;
+        font-weight: $font-weight-medium;
+      }
+
+      &--status {
+        @include table-content-item;
+        text-align: center;
+        color: $dark-bg-color;
+        font-weight: $font-weight-medium;
+      }
+
+      &--note {
+        @include table-content-item;
+        color: $dark-bg-color;
+        font-weight: $font-weight-medium;
+      }
+
+      &--edit {
+        @include table-content-item;
+        color: $text-color;
+        text-align: center;
+        margin-right: 0;
+
+        &-icon {
+          position: relative;
+          width: 15px;
+          height: 14px;
+          fill: $dark-brand-color;
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+
+  &-top {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--name {
+      font-size: 16px;
+      font-weight: 700;
+      color: $dark-brand-color;
+    }
+
+    &--count {
+      color: $dark-brand-color;
+      text-align: right;
+    }
+  }
+
+  &-reservations {
+    @include box-shadow($primary-box-shadow);
+
+    &__header {
+      @include table-header;
+      margin-top: 20px;
+
+      &--date {
+        @include table-header-item;
+      }
+
+      &--time {
+        @include table-header-item;
+      }
+
+      &--status {
+        @include table-header-item;
+      }
+    }
+
+    &__reservation {
+      @include table-row;
+      //display: flex;
+      //margin-bottom: 1px;
+      //position: relative;
+
+      &:last-child {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+
+      &--date {
+        @include table-content-item;
+        color: $dark-bg-color;
+        font-weight: $font-weight-medium;
+      }
+
+      &--time {
+        @include table-content-item;
+        color: $dark-bg-color;
+        font-weight: $font-weight-medium;
+      }
+
+      &--status {
+        @include table-content-item;
+        color: $dark-bg-color;
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+
+  &__modal-edit {
+
+    .modal-dialog {
+      max-width: 300px;
+    }
+
+    &--title {
+      text-align: center;
+      color: $dark-brand-color;
+      font-size: $font-size-big;
+      font-weight: $font-weight-bold;
+      margin-bottom: 20px;
+    }
+
+    &--submit {
+      @include modal-submit;
+    }
+
+  }
+
+}
+
+.companies {
+  padding: 0 30px;
+
+  &-error__text {
+    text-align: center;
+    margin-top: 100px;
+    width: 100%;
+    font-size: 15px;
+
+  }
+
+  &-header {
+    display: flex;
+
+    &__name {
+      flex: 1;
+      margin-right: 20px;
+      max-width: 260px;
+    }
+
+    &__control {
+      display: flex;
+
+      &--submit {
+        @include button-animate;
+        margin: 20px 20px 10px 0;
+        min-width: 100px;
+      }
+
+      &--clear {
+        @include border-radius;
+        margin: 20px 0 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        background-color: #fff;
+
+        &-icon {
+          position: relative;
+          fill: $error-color;
+          width: 13px;
+          height: 13px;
+        }
+      }
+    }
+  }
+
+  &-content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    @include box-shadow($primary-box-shadow);
+
+    &__header {
+      @include table-header;
+
+      &--name {
+        @include table-header-item;
+        flex: 4;
+      }
+
+      &--reservations {
+        @include table-header-item;
+        flex: 1;
+      }
+
+      &--edit {
+        @include table-header-item;
+        text-align: center;
+      }
+
+    }
+
+    &__company {
+      @include table-row;
+      //display: flex;
+      //margin-bottom: 1px;
+      //position: relative;
+
+      &:last-child {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+
+      &--name {
+        @include table-content-item;
+        flex: 4;
+
+        &-link {
+          color: $dark-brand-color;
+          font-weight: 600;
+        }
+      }
+
+      &--reservations {
+        @include table-content-item;
+        flex: 1;
+      }
+
+      &--edit {
+        @include table-content-item;
+        text-align: center;
+        margin-right: 0;
+
+        &-icon {
+          position: relative;
+          width: 15px;
+          height: 14px;
+          fill: $dark-brand-color;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__modal-edit {
+
+    .modal-dialog {
+      max-width: 300px;
+    }
+
+    &--title {
+      text-align: center;
+      color: $dark-brand-color;
+      font-size: $font-size-big;
+      font-weight: $font-weight-bold;
+      margin-bottom: 20px;
+    }
+
+    &--submit {
+      @include modal-submit;
+    }
+
+  }
+
+}
+
+.company {
+  padding: 0 30px;
+
+  &-top {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--name {
+      font-size: 16px;
+      font-weight: 700;
+      color: $dark-brand-color;
+    }
+
+    &--count {
+      color: $dark-brand-color;
+      text-align: right;
+    }
+  }
+
+  &-reservations {
+    @include box-shadow($primary-box-shadow);
+
+    &__header {
+      @include table-header;
+      margin-top: 20px;
+
+      &--client {
+        @include table-header-item;
+      }
+
+      &--date {
+        @include table-header-item;
+      }
+
+      &--time {
+        @include table-header-item;
+        text-align: center;
+      }
+
+      &--phone {
+        @include table-header-item;
+      }
+
+      &--mobile {
+        @include table-header-item;
+      }
+
+      &--email {
+        @include table-header-item;
+      }
+
+      &--status {
+        @include table-header-item;
+        text-align: center;
+      }
+    }
+
+    &__reservation {
+      @include table-header;
+      //display: flex;
+      //margin-bottom: 1px;
+      //position: relative;
+
+      &:last-child {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+
+      &--client {
+        @include table-content-item;
+        font-weight: 600;
+      }
+
+      &--date {
+        @include table-content-item;
+      }
+
+      &--time {
+        @include table-content-item;
+        text-align: center;
+      }
+
+      &--phone {
+        @include table-content-item;
+      }
+
+      &--mobile {
+        @include table-content-item;
+      }
+
+      &--email {
+        @include table-content-item;
+      }
+
+      &--status {
+        @include table-content-item;
+        text-align: center;
+        margin-right: 0;
+      }
+    }
+  }
+
+}

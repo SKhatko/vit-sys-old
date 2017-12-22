@@ -1,0 +1,1075 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+html, body {
+    height: 100%;
+}
+
+header {
+    background: #373a3c;
+    height: 50px;
+    color: #fff;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+#logo {
+    height: 40px;
+    margin-top: 5px;
+}
+
+.mboth {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.mtop {
+    margin-top: 25px;
+}
+
+.mbottom {
+    margin-bottom: 25px;
+}
+
+.mboth15 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.mbottom15 {
+    margin-bottom: 15px;
+}
+
+.mtop15 {
+    margin-top: 15px;
+}
+
+.pnone {
+    padding: 0;
+}
+
+.pboth {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.ptop {
+    padding-top: 25px;
+}
+
+.pbottom {
+    padding-bottom: 25px;
+}
+
+.bordered-box {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#mobile-menu {
+    margin-top: 12px;
+    float: left;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+#mobile-menu span {
+    display: block;
+    margin-top: 5px;
+    height: 3px;
+    background: #fff;
+    width: 22px;
+    border-radius: 2px;
+}
+
+#restaurant-logo {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 45px;
+}
+
+.btn-holder {
+    text-align: right;
+    line-height: 50px;
+}
+
+.btn-holder a img {
+    width: 30px;
+    height: 30px;
+}
+
+.category-action-holder {
+    display: inline-block;
+    float: right;
+}
+
+.category-visibility-holder {
+    float: right;
+    margin-right: 20px;
+    width: 60px;
+    font-style: italic;
+}
+
+.category-info-holder {
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+}
+
+.small-textarea.form-control {
+    height: 100px;
+}
+
+.redactor-editor {
+    min-height: 200px;
+}
+
+.modal.in .modal-dialog {
+    z-index: 1060;
+}
+
+.fc-button-group, .fc button {
+    display: block;
+}
+
+.main-wrapper {
+    position: relative;
+    min-height: 100%;
+}
+
+.side-bar {
+    width: 220px;
+    height: auto;
+    background-color: #f8f8f8;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    border-right: 1px solid #ddd;
+    webkit-box-shadow: -3px 0px 8px -4px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: -3px 0px 8px -4px rgba(0, 0, 0, 0.5);
+    box-shadow: -3px 0px 8px -4px rgba(0, 0, 0, 0.5);
+}
+
+.side-bar.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+}
+
+.side-bar-footer {
+    width: 220px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.side-bar-footer .logo-holder img {
+    width: 150px;
+}
+
+.side-bar-footer .contact-info span {
+    display: block;
+}
+
+.side-bar-footer .contact-info {
+    margin: 10px 0;
+}
+
+.side-bar-footer .copy-right {
+    color: #888;
+}
+
+.calign {
+    text-align: center;
+}
+
+.navbar {
+    background: transparent;
+}
+
+.nav > li > a {
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    background: transparent;
+    color: #585858;
+}
+
+.nav > li > a:hover, .nav > li > a:focus, .nav > li > a.active, .nav > li.active > a {
+    text-decoration: none;
+    background: #e1e1e1;
+    color: #000;
+}
+
+.nav > li > ul {
+    list-style-type: none;
+    padding: 0;
+    background: #f9f9f9;
+}
+
+.nav > li > ul > li {
+    padding-left: 20px;
+    width: 100%;
+}
+
+.nav li > ul > li.active > a {
+    color: #000;
+}
+
+.admin-header {
+    background-color: #367fa9;
+    padding: 10px 15px;
+    text-align: center;
+    color: #fff;
+}
+
+.navbar {
+    /*height: 100%;*/
+    border: none;
+}
+
+.view-top {
+    float: left;
+    width: 100%;
+    padding-left: 220px;
+    background-color: #3c8dbc;
+    color: #f8f8f8;
+}
+
+.view-top p {
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 200px;
+}
+
+.menu-button {
+    position: absolute;
+    top: 8px;
+    left: 230px;
+}
+
+.menu-button a {
+    text-decoration: none;
+}
+
+.menu-button span {
+    display: block;
+    margin-top: 4px;
+    height: 2px;
+    background: #fff;
+    width: 20px;
+}
+
+.logout-btn {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.heading-holder {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.heading-holder h2, .heading-holder h1 {
+    margin: 0;
+    display: inline-block;
+}
+
+.interfaces-holder {
+    padding-top: 7px;
+    text-align: right;
+}
+
+#interface-sel {
+    width: 200px;
+    float: right;
+}
+
+#general-loader {
+    float: right;
+    margin-top: 10px;
+}
+
+.content-section {
+    height: 100%;
+    width: 100%;
+    padding-left: 220px;
+}
+
+.content-holder {
+    padding: 15px 0;
+    background: #fff;
+}
+
+.dashboard-link {
+    color: inherit;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    height: 260px;
+}
+
+.dashboard-link:hover, .dashboard-link:active {
+    color: inherit;
+    text-decoration: none;
+    background: #eee;
+}
+
+.dashboard-box img {
+    width: 100%;
+    max-width: 128px;
+}
+
+.dashboard-box h3 {
+    margin-top: 10px;
+}
+
+.multiple-select {
+    height: 350px;
+}
+
+select[multiple] {
+    height: 350px;
+}
+
+.clear {
+    clear: both;
+}
+
+.filters-section {
+    display: none;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    padding-top: 10px;
+}
+
+
+a.time-of-day-icon {
+    padding: 2px;
+    text-decoration: none;
+    margin: 0 2px;
+    border-radius: 3px;
+    border: 1px solid #e8e8e8;
+    display: inline-block;
+}
+
+a.time-of-day-icon:hover, a.time-of-day-icon:active {
+    text-decoration: none;
+}
+
+.time-of-day-icon img {
+    width: 32px;
+    height: 32px;
+    opacity: 0.4;
+}
+
+.time-of-day-icon.active {
+    background: #eee;
+}
+
+.time-of-day-icon.active img {
+    opacity: 1;
+}
+
+.reservations-big-icons {
+    text-align: right;
+}
+
+.reservations-big-icons a {
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 1px solid #e8e8e8;
+    display: inline-block;
+}
+
+.reservations-big-icons a:hover {
+    background: #eee;
+}
+
+.reservations-big-icons a img {
+    width: 50px;
+    height: 50px;
+}
+
+.table-action-link {
+    margin: 0 3px;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+#status-change-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.light-img {
+    opacity: 0.2;
+}
+
+.light-img {
+    max-height: 38px;
+}
+
+.light-img.active {
+    opacity: 1;
+}
+
+.dataTables_filter {
+    display: none;
+}
+
+.sidebar-calendar {
+    position: absolute;
+    left: -231px;
+    top: 105px;
+    width: 210px;
+    padding: 5px;
+    background: #f8f8f8;
+}
+
+.sidebar-calendar .datepicker {
+    width: 180px;
+}
+
+#hourly-view-table {
+    width: 100%;
+}
+
+#hourly-view-table td {
+    text-align: center;
+    border: 1px solid #ccc;
+    line-height: 24px;
+}
+
+.table-action-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-item-holder {
+    border: 1px solid #aaa;
+    padding: 5px;
+    position: relative;
+    height: 162px;
+}
+
+.menu-item-selection-holder {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.menu-item-description {
+    white-space: pre-wrap;
+}
+
+.menu-item-price {
+    font-weight: bold;
+}
+
+.menu-item-holder h3, .menu-item-holder h2 {
+    margin-top: 5px;
+}
+
+.menu-item-image-holder {
+    width: 200px;
+    height: 150px;
+    float: left;
+    margin-right: 10px;
+    clear: right;
+}
+
+.menu-item-image-holder img {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-item-icons {
+    position: absolute;
+    bottom: 5px;
+    left: 215px;
+}
+
+.menu-item-controls {
+    float: right;
+}
+
+.menu-item-delete-a {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.menu-item-edit-a {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.menu-item-delete-a span, .menu-item-edit-a span {
+    font-size: 20px;
+}
+
+.form-box {
+    background: #d8d8d8;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.form-box h3, .form-box h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.restaurant-menu .menu-item-holder {
+    margin-bottom: 26px;
+    min-height: 80px;
+    border: 0;
+    height: auto;
+}
+
+.restaurant-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.pall {
+    padding: 15px;
+}
+
+.container {
+    width: 100%;
+}
+
+/* menu */
+
+.menu {
+    background-color: #fff;
+}
+
+.menu-fixed {
+    position: fixed;
+    top: 15px;
+}
+
+.menu-course {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.menu-course-title {
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    padding: 6px;
+    border: 1px solid #ddd;
+    background: #f8f8f8;
+    border-radius: 4px;
+    transition: all .3s ease;
+}
+
+.menu-course-title:hover {
+    background-color: #efefef;
+}
+
+.menu-course-title.active {
+    background-color: #bbb;
+}
+
+.menu-course-item {
+    padding-right: 17px;
+    margin-left: 15px;
+    position: relative;
+    line-height: 27px;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-course-remove {
+    color: #FF0000;
+    position: absolute;
+    right: 6px;
+    top: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.menu-course-item-remove {
+    color: #FF0000;
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+}
+
+.menu-add-category-block {
+    margin-left: 20px;
+}
+
+.menu-category-list {
+    margin-left: 20px;
+}
+
+.menu-markup .category-holder {
+    display: none;
+}
+
+.menu-markup .menu-item-name {
+    font-weight: bold;
+}
+
+.action-btn-add {
+    display: inline-block;
+    background-color: #999;
+    border-color: #777;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #fff;
+    min-width: 100px;
+    text-align: center;
+    margin-top: 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.action-btn-remove {
+    display: inline-block;
+    background-color: #5bc0de;
+    border-color: #777;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #fff;
+    min-width: 100px;
+    text-align: center;
+    margin-top: 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.quantity-group {
+    position: relative;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.quantity-input {
+    /*position: absolute;
+    top: 0;
+    right: 0;*/
+    display: inline-block;
+    max-width: 60px;
+    height: 26px;
+}
+
+.kitchen_summary_print {
+    padding-left: 30px;
+}
+
+.kitchen_summary_print img {
+    margin-top: -9px;
+}
+
+/** Sortable **/
+ul#sortable {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul#sortable li {
+    list-style-type: none;
+    margin: 5px 0;
+    padding: 5px;
+    background: #eee;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ddd;
+}
+
+ul#sortable li > span {
+    margin-right: 5px;
+}
+
+ul#sortable li span.controls {
+    float: right;
+}
+
+ul#sortable li span.controls a {
+    margin: 0 5px;
+    font-size: 18px;
+}
+
+.loader {
+    display: none;
+}
+
+/** date picker **/
+.day.bold {
+    font-weight: bold;
+    color: #000;
+}
+
+.day.closed, .today.active.closed, .datepicker table tr td.today.active.closed, .datepicker table tr td.today.closed {
+    color: red;
+}
+
+/** Autocomplete **/
+.autocomplete-suggestions {
+    border: 1px solid #999;
+    background: #FFF;
+    cursor: default;
+    overflow: auto;
+    -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+    -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+    box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+}
+
+.autocomplete-suggestion {
+    padding: 2px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-bottom: 1px solid #aaa;
+}
+
+.autocomplete-suggestion img {
+    max-height: 16px;
+}
+
+.autocomplete-no-suggestion {
+    padding: 2px 5px;
+}
+
+.autocomplete-selected {
+    background: #F0F0F0;
+}
+
+.autocomplete-suggestions strong {
+    font-weight: bold;
+    color: #000;
+}
+
+.autocomplete-group {
+    padding: 2px 5px;
+}
+
+.autocomplete-group strong {
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    display: block;
+    border-bottom: 1px solid #000;
+}
+
+/*
+.autocomplete-suggestion i {float:right;}
+*/
+
+.small-btn {
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.small-btn:hover {
+    text-decoration: none;
+}
+
+.btn-maroon {
+    background-color: #a62222;
+    border-color: #8c0101;
+    color: #fff;
+}
+
+.btn-maroon:hover, .btn-maroon.focus, .btn-maroon:focus, .btn-maroon.active, .btn-maroon:active, .btn-maroon:active:focus {
+    color: #fff;
+    background-color: #8c0101;
+    border-color: #740000;
+}
+
+.btn-maroon:disabled, .btn-maroon.disabled, .btn-maroon:disabled:hover, .btn-maroon.disabled:hover {
+    color: #fff;
+    background-color: #c86e6e;
+    border-color: #bb5151;
+}
+
+/** Menu backgrounds album **/
+.photo-categories-nav {
+    padding: 0 0 6px;
+}
+
+.photo-categories-nav li {
+    display: inline-block;
+    list-style: none;
+    margin-top: 8px;
+}
+
+.photo-categories-nav li a {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #337ab7;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.photo-categories-nav li a.active, .photo-categories-nav li a:hover, .photo-categories-nav li a:active {
+    background: #337ab7;
+    color: #fff;
+}
+
+#photos-holder {
+    min-height: 300px;
+    padding-bottom: 15px;
+}
+
+.photo-holder img {
+    width: 100%;
+}
+
+.photo-col {
+    margin-top: 15px;
+}
+
+.photo-holder {
+    position: relative;
+}
+
+.photo-holder.active img {
+    border: 2px solid green;
+}
+
+.photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.photo-overlay {
+    background: rgba(0, 0, 0, .6);
+}
+
+.photo-holder:hover .photo-overlay {
+    display: block;
+}
+
+.photo-overlay a {
+    display: block;
+    width: 120px;
+    margin: 8px auto;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.photo-overlay a:hover {
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+}
+
+.photo-overlay .choose-photo-btn {
+    margin-top: 60px;
+}
+
+#delete-photo-dialog {
+    z-index: 999999;
+}
+
+/** Analytics **/
+.stats-section {
+    text-align: center;
+}
+
+.stats-section h3 {
+    font-size: 14px;
+}
+
+.stat-icon {
+    font-size: 18px;
+}
+
+.stat-holder {
+    font-weight: bold;
+    font-size: 22px;
+    color: #9d0000;
+}
+
+.percent-holder {
+    font-size: 12px;
+}
+
+#data-table th {
+    font-size: 12px;
+}
+
+.chart-tabs {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.nav-tab-maroon {
+    border: 1px solid maroon;
+    padding: 5px;
+    color: #9d0000;
+    margin: 0 5px;
+}
+
+.nav-tab-maroon.active, .nav-tab-maroon:hover {
+    background: #9d0000;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-tab-maroon:active, .nav-tab-maroon:focus, .nav-tab-maroon:active:focus {
+    text-decoration: none;
+}
+
+.weekend-row, .table-striped > tbody > tr:nth-of-type(odd).weekend-row {
+    background: rgba(68, 170, 213, .2);
+}
+
+.preorder-holder {
+    background: #fafafa;
+    padding: 10px;
+}
+
+.preorder-holder hr {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.preorder-description hr {
+    margin: 5px 2%;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.content-box {
+    border: 1px solid #bbb;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+
+@media screen and (min-width: 768px) {
+    .menu {
+
+    }
+}
+
+@media (min-width: 768px) {
+    .col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #mobile-menu {
+        display: none;
+    }
+
+    #restaurant-logo {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .sm-hide {
+        display: none;
+    }
+
+    .content-section {
+        padding-left: 0;
+    }
+
+    .side-bar {
+        z-index: 55;
+        left: -220px;
+    }
+
+    .side-bar-footer {
+        display: none;
+    }
+
+    #mobile-menu {
+        display: inline-block;
+    }
+
+    #restaurant-logo {
+        display: none;
+    }
+}
+
+@media screen and (max-height: 400px) {
+    .side-bar-footer {
+        display: none;
+    }
+}
+
+
+@media screen and (max-height: 690px) {
+    .side-bar-footer .logo-holder {
+        display: none;
+    }
+}

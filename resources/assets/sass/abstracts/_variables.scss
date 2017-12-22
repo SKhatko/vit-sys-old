@@ -1,0 +1,58 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// Font size
+$font-size-regular: 12px;
+$font-size-small: 10px;
+$font-size-medium: 14px;
+$font-size-big: 16px;
+$font-size-large: 24px;
+
+// Font family
+$font-family-text: 'Roboto', sans-serif;
+$font-family-display: 'Arial', 'Helvetica', sans-serif;
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Font color
+$white-text-color: rgb(255, 255, 255);
+$lightest-text-color: rgb(180, 194, 218);
+$lighter-color: rgb(135, 141, 151);
+$light-color: rgb(103, 103, 103);
+$dark-brand-color: rgb(69, 84, 110);
+$text-color: rgb(0, 0, 0);
+$brand-color: rgb(16, 179, 241);
+$error-color: rgb(203, 45, 45);
+
+// Background colors
+$white-bg-color: rgba(255, 255, 255, 1);
+$lighter-bg-color: rgba(236, 242, 245, 1);
+$light-bg-color: rgba(216, 221, 230, 1);
+$gray-bg-color: rgba(195, 203, 218, 1);
+$blue-bg-color: rgba(16, 179, 241, 1);
+$dark-bg-color: rgba(53, 64, 82, 1);
+$darker-bg-color: rgba(42, 53, 72, 1);
+
+// Box shadow
+$primary-box-shadow: 1px 1px 40px rgba(60, 69, 79, 0.1);
+$active-box-shadow: 1px 1px 40px rgba(60, 69, 79, 0.2);
+
+// Default border-radius
+$border-radius: 3px;
+
+$transition-default: all .3s ease;
+
+
+//Tooltip
+$tooltip-max-width: 200px;
+$tooltip-color: $text-color;
+$tooltip-bg: $white-bg-color;
+$tooltip-opacity: 1;
+$tooltip-arrow-width: 5px;
+$tooltip-arrow-color: $tooltip-bg ;
+$zindex-tooltip: 1070;

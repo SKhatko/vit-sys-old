@@ -1,0 +1,46 @@
+
+
+// Container that the modal scrolls within
+.alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1020;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .alert-dialog {
+    @include translate(0, -25%);
+    @include transition-transform(0.1s ease);
+  }
+  &.in .alert-dialog {
+    @include translate(0, 0)
+  }
+
+  &-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+  }
+
+  &-content {
+    position: relative;
+    background-color: rgb(249, 250, 250);
+    background-clip: padding-box;
+    outline: 0;
+    padding: 30px;
+    @include border-radius;
+  }
+}
+
+.modal-open .alert {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
