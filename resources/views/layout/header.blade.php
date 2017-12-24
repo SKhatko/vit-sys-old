@@ -31,7 +31,7 @@
             </div>
         @endif
         @if (\App\Config::$has_clients)
-            <div class="header-menu__item {{ strpos(url()->current(), 'crm') !== false ? 'active' : ''}}">
+            <div class="header-menu__item {{ strpos(url()->current(), '/crm') !== false ? 'active' : ''}}">
                 <a href="{{ url('crm') }}" class="header-menu__item-link">
                     {{ trans('crm.clients') }}
                 </a>
