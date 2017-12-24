@@ -18,7 +18,7 @@
 
             @include('partials.error', [
       'message' => trans('restaurant.add_languages_first_error'),
-      'action' => action('ConfigController@onlineMenu'),
+      'action' => '',
       'actionName' => 'Settings'
        ])
 
